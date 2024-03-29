@@ -33,7 +33,10 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo apt-get update
 sudo apt-get install docker-compose-plugin
 ```
-
+##### To find a file in the entire system
+```bash
+sudo find / -type d -name "sites-enabled"
+```
 
 # Nginx Configuration Directories
 
