@@ -87,7 +87,7 @@ You can use an underscore (_) as a wildcard to match any domain name that doesn'
 server_name _;
 ```
 
-Redirecting www to Non-www
+### Redirecting www to Non-www
 You can use server_name in combination with a redirect to ensure that requests to www.example.com are redirected to example.com (non-www version).
 
 ```
@@ -111,7 +111,7 @@ server {
 }
 ```
 
-# `$request_uri`
+### `$request_uri`
 The $request_uri variable contains the full original request from the client, including the path and query string (everything after the domain). This value is exactly what the client requested, without any modifications or decoding.
 
 Includes: The full URI including the query string.
@@ -128,7 +128,7 @@ server {
     return 301 https://example.com$request_uri;
 }
 ```
-# `$uri`
+### `$uri`
 The $uri variable contains the normalized URI that Nginx works with internally. It represents the path part of the request, without the query string. Additionally, $uri is decoded by Nginx, meaning that any encoded characters (like %20) are translated into their real character equivalents (in this case, a space).
 
 Includes: The URI path only (no query string).
@@ -152,6 +152,3 @@ server {
 | $request_uri	| Full URI as requested by the client, including the query string and encoded characters. |	/page?user=1 (unchanged from the original request) |
 | $uri	| Normalized URI used internally by Nginx, without the query string and with decoded characters.	| /page (decoded and modified if needed) |
 
-```
-http://example.com/page?user=1
-```
